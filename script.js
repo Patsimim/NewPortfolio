@@ -1,4 +1,21 @@
 emailjs.init("km43wlzZLAmV2iMq3");
+
+// TEMPORARY DEBUG - remove after fixing
+setTimeout(() => {
+  emailjs
+    .send("service_g0zwocd", "template_yrnxpky", {
+      from_name: "Test User",
+      from_email: "test@test.com",
+      message: "Test message",
+    })
+    .then((res) => {
+      console.log("SUCCESS:", res);
+    })
+    .catch((err) => {
+      console.log("FULL ERROR:", JSON.stringify(err));
+    });
+}, 2000);
+
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(".nav-links a");
 
@@ -31,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       submitBtn.disabled = true;
 
       emailjs
-        .send("service_g0zwocd", "template_ab1cd2e", {
+        .send("service_g0zwocd", "template_yrnxpky", {
           from_name: document.getElementById("name").value,
           from_email: document.getElementById("email").value,
           message: document.getElementById("message").value,
