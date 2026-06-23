@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       submitBtn.disabled = true;
 
       emailjs
-        .send("service_g0zwocd", "YOUR_TEMPLATE_ID", {
+        .send("service_g0zwocd", "template_ab1cd2e", {
           from_name: document.getElementById("name").value,
           from_email: document.getElementById("email").value,
           message: document.getElementById("message").value,
