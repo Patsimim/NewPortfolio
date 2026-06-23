@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,8 +22,8 @@
           <!-- <li><a href="#contact">Contacts</a></li> -->
           <li>
             <a
-              href="./images/image.png"
-              download="RusselRojo_Resume.png"
+              href="./images/Rojo_Resume.pdf"
+              download="RusselRojo_Resume.pdf"
               id="resume-link"
               >Resume</a
             >
@@ -146,22 +146,23 @@
               <p class="company">Wonita Oriental OPC / Sept 2024 - May 2025</p>
               <ul>
                 <li>
-                  Designed and developed user interfaces that are user-friendly
-                  and reusable.
+                  Developed a dynamic voucher system featuring creation,
+                  editing, claiming, sharing, and real-time expiration tracking
+                </li>
+                <li>Implemented RESTful API</li>
+                <li>
+                  Integrated AWS SES and developed email verification workflows
+                  for both web and mobile platforms
+                </li>
+                <li>Implemented Xendit payment gateway integration</li>
+                <li>Optimize and made POS fully operational</li>
+                <li>
+                  QA Tester (Software Testing and QA) - Created test cases,
+                  identify bugs/regressions
                 </li>
                 <li>
-                  Handled the extracting/mapping of data from POS reports.
-                </li>
-                <li>
-                  Assisted in revamping web application frontend using Quasar a
-                  Vue.js framework.
-                </li>
-                <li>
-                  Reworked the backend processes and responses for Quasar pages.
-                </li>
-                <li>
-                  Worked with customer support and received positive customer
-                  feedback.
+                  Deployment to Live Server and mobile production (iOS and
+                  Android)
                 </li>
               </ul>
             </div>
@@ -173,7 +174,7 @@
     <!-- Hero Intro -->
     <section id="project-header">
       <div class="hero-intro-content">
-        <h2>Projects</h2>
+        <h2>Projects & Experience</h2>
       </div>
     </section>
 
@@ -195,10 +196,13 @@
     <!-- Contact Section -->
     <section id="contact">
       <h2>Contact Me</h2>
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <script src="./script.js"></script>
+
       <form id="contact-form">
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Message" required></textarea>
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <textarea id="message" placeholder="Message" required></textarea>
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
     </section>
@@ -221,13 +225,16 @@
         <p class="footer-quote">One day at a time</p>
 
         <div class="footer-icons">
-          <a href="https://linkedin.com" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/russel-gem-rojo-486079355/"
+            target="_blank"
+          >
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com" target="_blank">
+          <a href="https://github.com/Patsimim" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="mailto:youremail@gmail.com">
+          <a href="mailto:rojorusselgem@gmail.com">
             <i class="fas fa-envelope"></i>
           </a>
         </div>

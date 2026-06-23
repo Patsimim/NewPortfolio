@@ -1,3 +1,4 @@
+emailjs.init("km43wlzZLAmV2iMq3");
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(".nav-links a");
 
@@ -19,13 +20,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Simple contact form submission
+  // Contact form with EmailJS
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      alert("Thank you! Your message has been sent.");
-      contactForm.reset();
+
+      const submitBtn = contactForm.querySelector("button[type='submit']");
+      submitBtn.textContent = "Sending...";
+      submitBtn.disabled = true;
+
+      emailjs
+        .send("service_g0zwocd", "YOUR_TEMPLATE_ID", {
+          from_name: document.getElementById("name").value,
+          from_email: document.getElementById("email").value,
+          message: document.getElementById("message").value,
+        })
+        .then(() => {
+          alert("Message sent! I'll get back to you soon.");
+          contactForm.reset();
+        })
+        .catch(() => {
+          alert("Something went wrong. Please try again.");
+        })
+        .finally(() => {
+          submitBtn.textContent = "Send Message";
+          submitBtn.disabled = false;
+        });
     });
   }
 
@@ -70,7 +91,7 @@ async function loadProjects() {
           <a href="${link.url}" target="_blank" class="btn-secondary">
             ${link.label}
           </a>
-        `
+        `,
         )
         .join("");
 
